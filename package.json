@@ -1,0 +1,55 @@
+{
+  "name": "starter-playwright",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results && rimraf lighthouse",
+    "api-example": "npx playwright test tests/api.basic.example.spec.ts --project=chromium",
+    "data-mgmt": "npx playwright test tests/api.data.example.spec.ts --project=chromium",
+    "api-ui": "npm run clean && npx playwright test tests/api.ui.spec.ts --project=chromium",
+    "play-report": "npx playwright show-report",
+    "allure-report": "allure generate ./allure-results --clean",
+    "open-report": "npm run allure-report && allure open ./allure-report",
+    "firefox": "npm run clean && npx playwright test --project=firefox",
+    "chromium": "npm run clean && npx playwright test --project=chromium",
+    "a11y": "npm run clean && npx playwright test tests/a11y.lighthouse.spec.ts --project=chromium",
+    "webkit": "npm run clean && npx playwright test --project=webkit",
+    "ui-example-webkit": "npm run clean && npx playwright test tests/ui.example.spec.ts --project=webkit --headed",
+    "test": "npm run clean && npx playwright test --project=chromium",
+    "test-head": "npm run clean && npx playwright test --headed",
+    "reinstall": "npx playwright install",
+    "install-deps": "npx playwright install-deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlyautomatiza/starter-playwright.git"
+  },
+  "keywords": [
+    "playwright",
+    "playwright-test",
+    "allure report",
+    "web test automation"
+  ],
+  "author": "CharlyAutomatiza",
+  "license": "CC0",
+  "bugs": {
+    "url": "https://github.com/charlyautomatiza/starter-playwright/issues"
+  },
+  "homepage": "https://github.com/charlyautomatiza/starter-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.1",
+    "lighthouse": "^12.8.2",
+    "playwright-lighthouse": "^4.0.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.0.0",
+    "dotenv": "^17.2.2",
+    "rimraf": "^6.0.1",
+    "starter-playwright": "file:"
+  }
+}
