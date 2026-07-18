@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+allure-results/
+junit-results/
+playwright-report/
+test-results/
+lighthouse/
+.DS_Store
